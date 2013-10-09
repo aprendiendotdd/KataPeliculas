@@ -14,7 +14,7 @@ namespace Test_Unitario_Kata_Peliculas
 
             IFicheroEntrada ficheroEntrada = mock.Stub<IFicheroEntrada>();
 
-            Rhino.Mocks.Expect.Call(ficheroEntrada.Existe(ficheroEntrada.nombreFicheroEntrada)).IgnoreArguments().Return(true);
+            Rhino.Mocks.Expect.Call(ficheroEntrada.Existe("")).IgnoreArguments().Return(true);
 
             mock.Replay(ficheroEntrada);
 

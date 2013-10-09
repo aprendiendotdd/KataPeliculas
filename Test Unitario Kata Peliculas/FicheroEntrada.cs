@@ -12,5 +12,7 @@ namespace Test_Unitario_Kata_Peliculas
         {
             return File.Exists(nombreFichero);
         }
+
+        public string nombreFicheroEntrada { get; set; }
     }
 }
