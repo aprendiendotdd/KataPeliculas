@@ -8,7 +8,7 @@ namespace Test_Unitario_Kata_Peliculas
 {
     public class FicheroEntrada : Test_Unitario_Kata_Peliculas.IFicheroEntrada
     {        
-        public bool Existe(string nombreFichero)
+        public virtual bool Existe(string nombreFichero)
         {
             return File.Exists(nombreFichero);
         }

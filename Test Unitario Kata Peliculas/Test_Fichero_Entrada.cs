@@ -24,6 +24,17 @@ namespace Test_Unitario_Kata_Peliculas
 
         }
 
+        [TestMethod]
+        public void Existe_Con_Stub_Artesanal()
+        {
+            FicheroEntradaStub fakeFicheroEntrada = new FicheroEntradaStub();
+
+            IFicheroEntrada ficheroEntrada = fakeFicheroEntrada;
+            
+            Assert.IsTrue(ficheroEntrada.Existe(ficheroEntrada.nombreFicheroEntrada));
+
+        }
+
         
     }
 }

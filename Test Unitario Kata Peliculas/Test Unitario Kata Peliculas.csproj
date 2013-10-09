@@ -55,6 +55,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="FicheroEntrada.cs" />
+    <Compile Include="FicheroEntradaStub.cs" />
     <Compile Include="IFicheroEntrada.cs" />
     <Compile Include="Test_Fichero_Entrada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
