@@ -70,9 +70,8 @@ namespace Test_Unitario_Kata_Peliculas
         {
             try
             {
-                FakeStreamContenidoFichero fakeStream = new FakeStreamContenidoFichero(true);
                 FicheroEntrada ficheroEntrada = new FicheroEntrada();
-                bool result = ficheroEntrada.RecorrerFichero(fakeStream.contenidoFichero);
+                bool result = ficheroEntrada.RecorrerFichero(new StreamReader(new MemoryStream()));
                 Assert.Fail("Error fichero vacio");
             }
             catch
