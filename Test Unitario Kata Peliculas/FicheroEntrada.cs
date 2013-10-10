@@ -7,12 +7,25 @@ using System.Text;
 namespace Test_Unitario_Kata_Peliculas
 {
     public class FicheroEntrada : Test_Unitario_Kata_Peliculas.IFicheroEntrada
-    {        
-        public virtual bool Existe(string nombreFichero)
+    {
+        public FicheroEntrada() : this(null) { }
+
+        public FicheroEntrada(string nombreFichero)
         {
-            return File.Exists(nombreFichero);
+            nombreFicheroEntrada = nombreFichero;
+        }
+
+        public virtual bool Existe()
+        {
+            return File.Exists(nombreFicheroEntrada);
+        }
+
+        public System.IO.StreamReader Abrir()
+        {
+            return new StreamReader(new FileStream(nombreFicheroEntrada, FileMode.Open, FileAccess.Read));
         }
 
         public string nombreFicheroEntrada { get; set; }
+      
     }
 }

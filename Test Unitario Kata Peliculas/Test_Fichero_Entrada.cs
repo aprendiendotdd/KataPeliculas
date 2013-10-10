@@ -14,11 +14,11 @@ namespace Test_Unitario_Kata_Peliculas
 
             IFicheroEntrada ficheroEntrada = mock.Stub<IFicheroEntrada>();
 
-            Rhino.Mocks.Expect.Call(ficheroEntrada.Existe("")).IgnoreArguments().Return(true);
+            Rhino.Mocks.Expect.Call(ficheroEntrada.Existe()).IgnoreArguments().Return(true);
 
             mock.Replay(ficheroEntrada);
 
-            Assert.IsTrue(ficheroEntrada.Existe(ficheroEntrada.nombreFicheroEntrada));
+            Assert.IsTrue(ficheroEntrada.Existe());
 
             mock.Verify(ficheroEntrada);
 
@@ -31,10 +31,33 @@ namespace Test_Unitario_Kata_Peliculas
 
             IFicheroEntrada ficheroEntrada = fakeFicheroEntrada;
             
-            Assert.IsTrue(ficheroEntrada.Existe(ficheroEntrada.nombreFicheroEntrada));
+            Assert.IsTrue(ficheroEntrada.Existe());
 
         }
 
-        
+        [TestMethod]
+        public void Abrir()
+        {
+            Rhino.Mocks.MockRepository mock = new Rhino.Mocks.MockRepository();
+
+            IFicheroEntrada ficheroEntrada = mock.DynamicMock<IFicheroEntrada>();
+
+            Rhino.Mocks.Expect.Call(ficheroEntrada.Abrir()).Return(mock.Stub<StreamReader>());
+                       
+            mock.Replay(ficheroEntrada);
+
+            StreamReader contenidoFichero = ficheroEntrada.Abrir();
+
+            Assert.IsNotNull(contenidoFichero);
+
+            mock.Verify(ficheroEntrada);
+        }
+
+      
+
+
+
+      
+
     }
 }
