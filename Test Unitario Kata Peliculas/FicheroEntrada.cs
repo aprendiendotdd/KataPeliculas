@@ -10,6 +10,8 @@ namespace Test_Unitario_Kata_Peliculas
     {
         public FicheroEntrada() : this(null) { }
 
+        public string nombreFicheroEntrada { get; set; }
+
         public FicheroEntrada(string nombreFichero)
         {
             nombreFicheroEntrada = nombreFichero;
@@ -25,13 +27,10 @@ namespace Test_Unitario_Kata_Peliculas
             return new StreamReader(new FileStream(nombreFicheroEntrada, FileMode.Open, FileAccess.Read));
         }
 
-      
-        public string nombreFicheroEntrada { get; set; }
-
-
-
         public bool RecorrerFichero(StreamReader contenidoFichero)
         {
+            EsFicheroVacio(contenidoFichero);
+
             while (!contenidoFichero.EndOfStream)
             {
                 try
@@ -40,10 +39,17 @@ namespace Test_Unitario_Kata_Peliculas
                 }
                 catch
                 {
-                    throw new Exception("Error al ller registro");
+                    throw new Exception("Error al leer registro");
                 }
             }
             return true;
         }
+
+        private static void EsFicheroVacio(StreamReader contenidoFichero)
+        {
+            if (contenidoFichero.EndOfStream) { throw new Exception("Fichero Vacio"); }
+        }
+
+
     }
 }

@@ -66,20 +66,22 @@ namespace Test_Unitario_Kata_Peliculas
         }
 
         [TestMethod]
-        public void Error_Al_Recorrer_Fichero()
+        public void Error_Fichero_Vacio()
         {
             try
             {
                 FakeStreamContenidoFichero fakeStream = new FakeStreamContenidoFichero(true);
                 FicheroEntrada ficheroEntrada = new FicheroEntrada();
                 bool result = ficheroEntrada.RecorrerFichero(fakeStream.contenidoFichero);
-                Assert.Fail("Error al leer fichero");
+                Assert.Fail("Error fichero vacio");
             }
             catch
             {
                 //Ok
             }
         }
+
+    
 
     }
 }

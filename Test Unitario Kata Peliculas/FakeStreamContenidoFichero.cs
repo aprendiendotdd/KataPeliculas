@@ -21,11 +21,13 @@ namespace Test_Unitario_Kata_Peliculas
                 sw.WriteLine("4|INDIANA JONES|STEVEN SPIELBERG|4|4.95");
                 sw.WriteLine("5|PARQUE JURASICO|STEVEN SPIELBERG|3|2.5");
                 sw.WriteLine("6|TERMINATOR|JAMES CAMERON|5|6.05");
+                sw.Flush();
+                ms.Seek(0, SeekOrigin.Begin);
                 contenidoFichero = new StreamReader(ms);
             }
             else
             {
-                contenidoFichero = null;
+                contenidoFichero = new StreamReader(new MemoryStream());
             }
         }
 
