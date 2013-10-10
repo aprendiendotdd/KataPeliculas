@@ -8,7 +8,10 @@ namespace Test_Unitario_Kata_Peliculas
 
         System.IO.StreamReader Abrir();
 
+        bool RecorrerFichero(StreamReader streamReader);
+
         string nombreFicheroEntrada { get; set; }
+
         
     }
 }

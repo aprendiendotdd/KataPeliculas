@@ -25,7 +25,25 @@ namespace Test_Unitario_Kata_Peliculas
             return new StreamReader(new FileStream(nombreFicheroEntrada, FileMode.Open, FileAccess.Read));
         }
 
-        public string nombreFicheroEntrada { get; set; }
       
+        public string nombreFicheroEntrada { get; set; }
+
+
+
+        public bool RecorrerFichero(StreamReader contenidoFichero)
+        {
+            while (!contenidoFichero.EndOfStream)
+            {
+                try
+                {
+                    contenidoFichero.ReadLine();
+                }
+                catch
+                {
+                    throw new Exception("Error al ller registro");
+                }
+            }
+            return true;
+        }
     }
 }

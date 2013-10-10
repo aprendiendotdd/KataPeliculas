@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="FakeStreamContenidoFichero.cs" />
     <Compile Include="FicheroEntrada.cs" />
     <Compile Include="FicheroEntradaStub.cs" />
     <Compile Include="IFicheroEntrada.cs" />
