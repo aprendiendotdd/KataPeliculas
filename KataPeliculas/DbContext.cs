@@ -16,5 +16,10 @@ namespace KataPeliculas
         {
             Peliculas.Add(pelicula);            
         }
+
+        public void Commit()
+        {
+            this.SaveChanges();
+        }
     }
 }
