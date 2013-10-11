@@ -51,5 +51,20 @@ namespace Test_Unitario_Kata_Peliculas
                 //OK
             }
         }
+
+        [TestMethod]
+        public void Realizar_Consulta_De_Cantidad_De_Peliculas_De_Un_Director()
+        {
+                Rhino.Mocks.MockRepository mock = new Rhino.Mocks.MockRepository();
+                KataPeliculas.IDbContexto context = mock.DynamicMock<IDbContexto>();
+
+                Rhino.Mocks.Expect.Call(context.ObtenerCantidadPeliculasPorDirector("ROBERT ZEMECKIS")).IgnoreArguments().Return(1);
+
+                mock.ReplayAll();
+
+                int cantidad = context.ObtenerCantidadPeliculasPorDirector("ROBERT ZEMECKIS");
+
+                Assert.AreEqual(1, cantidad);               
+        }
     }
 }

@@ -21,5 +21,10 @@ namespace KataPeliculas
         {
             this.SaveChanges();
         }
+
+        public int ObtenerCantidadPeliculasPorDirector(string director)
+        {
+            return Peliculas.Select(s => s.Director == director).Count();
+        }
     }
 }

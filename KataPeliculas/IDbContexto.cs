@@ -5,7 +5,7 @@ namespace KataPeliculas
     {
         void Insertar(Pelicula pelicula);
         void Commit();
+        int ObtenerCantidadPeliculasPorDirector(string directo);
         System.Data.Entity.DbSet<Pelicula> Peliculas { get; set; }
-        
     }
 }
