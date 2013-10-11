@@ -81,7 +81,22 @@ namespace Test_Unitario_Kata_Peliculas
             }
         }
 
-    
+        [TestMethod]
+        public void Cerrar()
+        {
+            try
+            {
+                Rhino.Mocks.Expect.Call<IFicheroEntrada>(mockficheroEntrada).Throw(new Exception("No se pude cerrar fichero"));
+                mockficheroEntrada.Cerrar(null);
+                Assert.Fail("No se puede cerrar fichero");
+            }
+            catch
+            {
+                //Ok
+            }
 
+
+
+        }
     }
 }

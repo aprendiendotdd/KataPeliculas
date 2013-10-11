@@ -27,6 +27,11 @@ namespace KataPeliculas
             return new StreamReader(new FileStream(nombreFicheroEntrada, FileMode.Open, FileAccess.Read));
         }
 
+        public void Cerrar(System.IO.StreamReader contenidoFichero)
+        {
+            contenidoFichero.Close(); ;
+        }
+
         public bool RecorrerFichero(StreamReader contenidoFichero)
         {
             EsFicheroVacio(contenidoFichero);
@@ -49,7 +54,6 @@ namespace KataPeliculas
         {
             if (contenidoFichero.EndOfStream) { throw new Exception("Fichero Vacio"); }
         }
-
 
     }
 }
