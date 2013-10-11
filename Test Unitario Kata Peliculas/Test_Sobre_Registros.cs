@@ -1,4 +1,5 @@
 ﻿using System;
+using KataPeliculas;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Test_Unitario_Kata_Peliculas

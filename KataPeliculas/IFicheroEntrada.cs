@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-namespace Test_Unitario_Kata_Peliculas
+namespace KataPeliculas
 {
     public interface IFicheroEntrada
     {

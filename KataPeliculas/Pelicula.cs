@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Test_Unitario_Kata_Peliculas
+namespace KataPeliculas
 {
     public class Pelicula
     {
@@ -34,6 +34,7 @@ namespace Test_Unitario_Kata_Peliculas
         {
             try
             {
+
                 Cantidad = int.Parse(cantidad);
             }
             catch
@@ -88,4 +89,7 @@ namespace Test_Unitario_Kata_Peliculas
 
         public float Precio { get; set; }
     }
+
+
+
 }

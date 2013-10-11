@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Test_Unitario_Kata_Peliculas
+namespace KataPeliculas
 {
-    public class FicheroEntrada : Test_Unitario_Kata_Peliculas.IFicheroEntrada
+    public class FicheroEntrada : KataPeliculas.IFicheroEntrada
     {
         public FicheroEntrada() : this(null) { }
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Test_Unitario_Kata_Peliculas
 {
-    public class FicheroEntradaStub : FicheroEntrada
+    public class FicheroEntradaStub : KataPeliculas.FicheroEntrada
     {
 
         public override bool Existe()
