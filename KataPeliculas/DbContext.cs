@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace KataPeliculas
 {
-    public class DbContexto : DbContext
+    public class DbContexto : DbContext, KataPeliculas.IDbContexto
     {
         public DbSet<Pelicula> Peliculas{ get; set; }
 
         public void Insertar(Pelicula pelicula)
         {
-            Peliculas.Add(pelicula);
+            Peliculas.Add(pelicula);            
         }
     }
 }

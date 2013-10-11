@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DbContext.cs" />
     <Compile Include="FicheroEntrada.cs" />
+    <Compile Include="IDbContexto.cs" />
     <Compile Include="IFicheroEntrada.cs" />
     <Compile Include="Pelicula.cs" />
     <Compile Include="Program.cs" />
