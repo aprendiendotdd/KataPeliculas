@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bbddContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bbddContext.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FicheroEntrada.cs" />
     <Compile Include="IFicheroEntrada.cs" />
     <Compile Include="Pelicula.cs" />
@@ -49,6 +54,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bbddContext.xsc">
+      <DependentUpon>bbddContext.xsd</DependentUpon>
+    </None>
+    <None Include="bbddContext.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bbddContext.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="bbddContext.xss">
+      <DependentUpon>bbddContext.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
