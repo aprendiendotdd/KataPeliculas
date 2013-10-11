@@ -12,35 +12,35 @@ namespace Test_Unitario_Kata_Peliculas
         public void Validar_ID_Registro_leido_De_Fichero()
         {
             Pelicula pelicula = new Pelicula("1|REGRESO AL FUTURO|ROBERT ZEMECKIS|3|9.99");
-            Assert.AreEqual(1, pelicula.registroPelicula.ID);         
+            Assert.AreEqual(1, pelicula.ID);         
         }
 
         [TestMethod]
         public void Validar_Titulo_Registro_leido_De_Fichero()
         {
             Pelicula pelicula = new Pelicula("1|REGRESO AL FUTURO|ROBERT ZEMECKIS|3|9.99");
-            Assert.AreEqual("REGRESO AL FUTURO", pelicula.registroPelicula.Titulo);
+            Assert.AreEqual("REGRESO AL FUTURO", pelicula.Titulo);
         }
 
         [TestMethod]
         public void Validar_Director_Registro_leido_De_Fichero()
         {
             Pelicula pelicula = new Pelicula("1|REGRESO AL FUTURO|ROBERT ZEMECKIS|3|9.99");
-            Assert.AreEqual("ROBERT ZEMECKIS", pelicula.registroPelicula.Director);
+            Assert.AreEqual("ROBERT ZEMECKIS", pelicula.Director);
         }
 
         [TestMethod]
         public void Validar_Cantidad_Registro_leido_De_Fichero()
         {
             Pelicula pelicula = new Pelicula("1|REGRESO AL FUTURO|ROBERT ZEMECKIS|3|9.99");
-            Assert.AreEqual(3, pelicula.registroPelicula.Cantidad);
+            Assert.AreEqual(3, pelicula.Cantidad);
         }
 
         [TestMethod]
         public void Validar_Precio_Registro_leido_De_Fichero()
         {
             Pelicula pelicula = new Pelicula("1|REGRESO AL FUTURO|ROBERT ZEMECKIS|3|9,99");
-            Assert.AreEqual("9,99", pelicula.registroPelicula.Precio.ToString());
+            Assert.AreEqual("9,99", pelicula.Precio.ToString());
         }
     }
 }

@@ -35,12 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Stock Peliculas\Test Stock Peliculas\RhinoMock\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.XML" />
   </ItemGroup>
   <Choose>
@@ -56,11 +61,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="FakeStreamContenidoFichero.cs" />
-    <Compile Include="FicheroEntradaStub.cs" />
+    <Compile Include="FakesObjects\FakeStreamContenidoFichero.cs" />
+    <Compile Include="FakesObjects\FicheroEntradaStub.cs" />
     <Compile Include="Test_Fichero_Entrada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test_Sobre_Registros.cs" />
+    <Compile Include="Test_Sobre_BBDD_Datos.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="RhinoMock\acknowledgements.txt" />
@@ -73,6 +79,10 @@
       <Project>{9115f370-b55f-44f9-a70f-d2433631856d}</Project>
       <Name>KataPeliculas</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

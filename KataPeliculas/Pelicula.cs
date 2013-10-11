@@ -8,12 +8,9 @@ namespace KataPeliculas
 {
     public class Pelicula
     {
-
         public Pelicula(string texto)
         {
             string[] datos = texto.Split('|');
-            bbddDataSet.tablaPeliculasDataTable table = new bbddDataSet.tablaPeliculasDataTable();
-            registroPelicula = table.NewtablaPeliculasRow();
             ValidarIDDatos(datos[0]);
             ValidarTituloDatos(datos[1]);
             ValidarDirectorDatos(datos[2]);
@@ -25,7 +22,7 @@ namespace KataPeliculas
         {
             try
             {
-                registroPelicula.Precio = double.Parse(precio);
+                Precio = float.Parse(precio);
             }
             catch
             {
@@ -38,7 +35,7 @@ namespace KataPeliculas
             try
             {
 
-                registroPelicula.Cantidad = int.Parse(cantidad);
+                Cantidad = int.Parse(cantidad);
             }
             catch
             {
@@ -50,7 +47,7 @@ namespace KataPeliculas
         {
             if ((0 < director.Trim().Length) || (director.Trim().Length < 51))
             {
-                registroPelicula.Director = director;
+                Director = director;
             }
             else
             {
@@ -62,7 +59,7 @@ namespace KataPeliculas
         {
             if ((0 < titulo.Trim().Length) || (titulo.Trim().Length < 51))
             {
-                registroPelicula.Titulo = titulo;
+                Titulo = titulo;
             }
             else
             {
@@ -74,7 +71,7 @@ namespace KataPeliculas
         {
             try
             {
-                registroPelicula.ID = int.Parse(iD);
+                ID = int.Parse(iD);
             }
             catch
             {
@@ -82,8 +79,11 @@ namespace KataPeliculas
             }
         }
 
-        public bbddDataSet.tablaPeliculasRow registroPelicula;
-      
+        public int ID { get; private set; }
+        public string Titulo { get; private set; }
+        public string Director { get; private set; }
+        public int Cantidad { get; private set; }
+        public float Precio { get; private set; }      
     }
 
 
