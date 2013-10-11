@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="FicheroEntrada.cs" />
     <Compile Include="IDbContexto.cs" />
+    <Compile Include="IEmail.cs" />
     <Compile Include="IFicheroEntrada.cs" />
     <Compile Include="Pelicula.cs" />
     <Compile Include="Program.cs" />
