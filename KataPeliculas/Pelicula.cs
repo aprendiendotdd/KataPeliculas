@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -11,6 +12,8 @@ namespace KataPeliculas
         public Pelicula(string texto)
         {
             string[] datos = texto.Split('|');
+            bbddDataSet.tablaPeliculasDataTable table = new bbddDataSet.tablaPeliculasDataTable();
+            registroPelicula = table.NewtablaPeliculasRow();
             ValidarIDDatos(datos[0]);
             ValidarTituloDatos(datos[1]);
             ValidarDirectorDatos(datos[2]);
@@ -22,7 +25,7 @@ namespace KataPeliculas
         {
             try
             {
-                Precio = float.Parse(precio);
+                registroPelicula.Precio = double.Parse(precio);
             }
             catch
             {
@@ -35,7 +38,7 @@ namespace KataPeliculas
             try
             {
 
-                Cantidad = int.Parse(cantidad);
+                registroPelicula.Cantidad = int.Parse(cantidad);
             }
             catch
             {
@@ -47,7 +50,7 @@ namespace KataPeliculas
         {
             if ((0 < director.Trim().Length) || (director.Trim().Length < 51))
             {
-                Director = director;
+                registroPelicula.Director = director;
             }
             else
             {
@@ -59,7 +62,7 @@ namespace KataPeliculas
         {
             if ((0 < titulo.Trim().Length) || (titulo.Trim().Length < 51))
             {
-                Titulo = titulo;
+                registroPelicula.Titulo = titulo;
             }
             else
             {
@@ -71,7 +74,7 @@ namespace KataPeliculas
         {
             try
             {
-                ID = int.Parse(iD);
+                registroPelicula.ID = int.Parse(iD);
             }
             catch
             {
@@ -79,15 +82,8 @@ namespace KataPeliculas
             }
         }
 
-        public int ID { get; private set; }
-
-        public string Titulo { get; set; }
-
-        public string Director { get; set; }
-
-        public int Cantidad { get; set; }
-
-        public float Precio { get; set; }
+        public bbddDataSet.tablaPeliculasRow registroPelicula;
+      
     }
 
 

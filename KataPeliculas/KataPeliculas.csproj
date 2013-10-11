@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bbddContext.Designer.cs">
+    <Compile Include="bbddDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bbddContext.xsd</DependentUpon>
+      <DependentUpon>bbddDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FicheroEntrada.cs" />
     <Compile Include="IFicheroEntrada.cs" />
@@ -54,16 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="bbddContext.xsc">
-      <DependentUpon>bbddContext.xsd</DependentUpon>
+    <None Include="bbddDataSet.xsc">
+      <DependentUpon>bbddDataSet.xsd</DependentUpon>
     </None>
-    <None Include="bbddContext.xsd">
+    <None Include="bbddDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bbddContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>bbddDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="bbddContext.xss">
-      <DependentUpon>bbddContext.xsd</DependentUpon>
+    <None Include="bbddDataSet.xss">
+      <DependentUpon>bbddDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
