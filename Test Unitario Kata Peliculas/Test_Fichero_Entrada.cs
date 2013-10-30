@@ -58,12 +58,12 @@ namespace Test_Unitario_Kata_Peliculas
         }
 
         [TestMethod]
-        public void Recorrer_Fichero()
+        public void ObtenerregistroDeFichero()
         {
             FakeStreamContenidoFichero fakeStream = new FakeStreamContenidoFichero(false);
             FicheroEntrada ficheroEntrada = new FicheroEntrada();
-            bool result = ficheroEntrada.RecorrerFichero(fakeStream.contenidoFichero);
-            Assert.IsTrue(result);        
+            string result = ficheroEntrada.ObtenerRegistro(fakeStream.contenidoFichero);
+            Assert.AreEqual("1|REGRESO AL FUTURO|ROBERT ZEMECKIS|3|9.99", result);        
         }
 
         [TestMethod]
@@ -72,7 +72,7 @@ namespace Test_Unitario_Kata_Peliculas
             try
             {
                 FicheroEntrada ficheroEntrada = new FicheroEntrada();
-                bool result = ficheroEntrada.RecorrerFichero(new StreamReader(new MemoryStream()));
+                string result = ficheroEntrada.ObtenerRegistro(new StreamReader(new MemoryStream()));
                 Assert.Fail("Error fichero vacio");
             }
             catch
@@ -80,6 +80,7 @@ namespace Test_Unitario_Kata_Peliculas
                 //Ok
             }
         }
+
 
         [TestMethod]
         public void Cerrar()

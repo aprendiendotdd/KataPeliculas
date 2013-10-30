@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kata Peliculas Core", "Kata
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataPeliculas", "KataPeliculas\KataPeliculas.csproj", "{9115F370-B55F-44F9-A70F-D2433631856D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test Integracion Kata Peliculas", "Test Integracion Kata Peliculas\Test Integracion Kata Peliculas.csproj", "{A66F86C9-F26E-4F05-9D2B-12F64DBFEBC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,12 +27,17 @@ Global
 		{9115F370-B55F-44F9-A70F-D2433631856D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9115F370-B55F-44F9-A70F-D2433631856D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9115F370-B55F-44F9-A70F-D2433631856D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66F86C9-F26E-4F05-9D2B-12F64DBFEBC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66F86C9-F26E-4F05-9D2B-12F64DBFEBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A66F86C9-F26E-4F05-9D2B-12F64DBFEBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A66F86C9-F26E-4F05-9D2B-12F64DBFEBC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4A4A6CB3-F294-42F2-A415-42518DF4D310} = {7E11AD7A-4799-4CD3-A40D-168829AC89E9}
+		{A66F86C9-F26E-4F05-9D2B-12F64DBFEBC1} = {7E11AD7A-4799-4CD3-A40D-168829AC89E9}
 		{9115F370-B55F-44F9-A70F-D2433631856D} = {FA3D76E5-0D4F-4C33-B56D-1B6259AE4DC5}
 	EndGlobalSection
 EndGlobal

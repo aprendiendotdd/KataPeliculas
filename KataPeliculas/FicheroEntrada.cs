@@ -24,33 +24,28 @@ namespace KataPeliculas
 
         public System.IO.StreamReader Abrir()
         {
-            return new StreamReader(new FileStream(nombreFicheroEntrada, FileMode.Open, FileAccess.Read));
+          return new StreamReader(new FileStream(nombreFicheroEntrada, FileMode.Open, FileAccess.Read));
         }
 
         public void Cerrar(System.IO.StreamReader contenidoFichero)
         {
-            contenidoFichero.Close(); ;
+            contenidoFichero.Close();
         }
 
-        public bool RecorrerFichero(StreamReader contenidoFichero)
+      public string ObtenerRegistro(StreamReader contenidoFichero)
+      {
+        EsFicheroVacio(contenidoFichero);
+        try
         {
-            EsFicheroVacio(contenidoFichero);
-
-            while (!contenidoFichero.EndOfStream)
-            {
-                try
-                {
-                    contenidoFichero.ReadLine();
-                }
-                catch
-                {
-                    throw new Exception("Error al leer registro");
-                }
-            }
-            return true;
+          return contenidoFichero.ReadLine();
         }
+        catch
+        {
+          throw new Exception("Error al leer registro");
+        }
+      }
 
-        private static void EsFicheroVacio(StreamReader contenidoFichero)
+      private static void EsFicheroVacio(StreamReader contenidoFichero)
         {
             if (contenidoFichero.EndOfStream) { throw new Exception("Fichero Vacio"); }
         }

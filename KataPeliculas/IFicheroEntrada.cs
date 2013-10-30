@@ -7,7 +7,7 @@ namespace KataPeliculas
         bool Existe();
         System.IO.StreamReader Abrir();
         void Cerrar(StreamReader contenidoFichero);
-        bool RecorrerFichero(StreamReader streamReader);
+        string ObtenerRegistro(StreamReader streamReader);
 
         string nombreFicheroEntrada { get; set; }
     }

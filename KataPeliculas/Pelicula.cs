@@ -19,7 +19,7 @@ namespace KataPeliculas
         }
 
         private void ValidarPrecioDatos(string precio)
-        {
+        { 
             try
             {
                 Precio = float.Parse(precio);
